@@ -38,7 +38,8 @@
               "pack": "Number of Battery packs",
               "battery_nominal_voltage": "Lithium-ion battery nominal voltage",
               "battery_life_cycle_rating": "Lithium-ion battery expected life cycle rating",
-              "mb_slave_id": "Modbus Slave ID (usually 1)"
+              "mb_slave_id": "Modbus Slave ID (usually 1)",
+              "poll_interval": "Minimum poll interval in seconds (0 = profile default)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Number of Battery packs",
               "battery_nominal_voltage": "Lithium-ion battery nominal voltage",
               "battery_life_cycle_rating": "Lithium-ion battery expected life cycle rating",
-              "mb_slave_id": "Modbus Slave ID (usually 1)"
+              "mb_slave_id": "Modbus Slave ID (usually 1)",
+              "poll_interval": "Minimum poll interval in seconds (0 = profile default)"
             }
           }
         }

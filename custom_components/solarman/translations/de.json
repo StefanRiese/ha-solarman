@@ -37,7 +37,8 @@
               "pack": "Anzahl Akkupacks",
               "battery_nominal_voltage": "Nennspannung des Lithium-Ionen-Akkus",
               "battery_life_cycle_rating": "Erwartete Lebensdauer der Lithium-Ionen-Batterie",
-              "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)"
+              "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)",
+              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)"
             }
           }
         }
@@ -75,7 +76,8 @@
               "pack": "Anzahl Akkupacks",
               "battery_nominal_voltage": "Nennspannung des Lithium-Ionen-Akkus",
               "battery_life_cycle_rating": "Erwartete Lebensdauer der Lithium-Ionen-Batterie",
-              "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)"
+              "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)",
+              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)"
             }
           }
         }

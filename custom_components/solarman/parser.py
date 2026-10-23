@@ -19,13 +19,14 @@ class ParameterParser:
         self._min_span = DEFAULT_[REGISTERS_MIN_SPAN]
         self._max_size = DEFAULT_[REGISTERS_MAX_SIZE]
         self._digits = DEFAULT_[DIGITS]
+        self._poll_interval = 0
         self._requests = None
         self._previous_result = {}
         self._result = {}
 
         self.info: dict[str, str] = {}
 
-    async def init(self, path: str, filename: str, parameters: dict):
+    async def init(self, path: str, filename: str, parameters: dict, poll_interval: int = 0):
         profile = await yaml_open(path + filename)
 
         if "info" in profile:
@@ -45,11 +46,15 @@ class ParameterParser:
             if DIGITS in default:
                 self._digits = default[DIGITS]
 
+        # Minimum interval between reads of a register, rounded up to the scheduler tick (TIMINGS_INTERVAL)
+        if poll_interval > 0:
+            self._poll_interval = -(-poll_interval // TIMINGS_INTERVAL) * TIMINGS_INTERVAL
+
         if "requests" in profile and "requests_fine_control" in profile:
             _LOGGER.debug("Fine control of request sets is enabled!")
             self._requests = [create_request(get_request_code(r, self._code), r[REQUEST_START], r[REQUEST_END]) for r in profile["requests"]]
 
-        _LOGGER.debug(f"{filename} w/ {'defaults' if 'default' in profile else 'stock values'} for update_interval: {self._update_interval}, code: {self._code}, min_span: {self._min_span}, max_size: {self._max_size}, digits: {self._digits}, parameters: {parameters}")
+        _LOGGER.debug(f"{filename} w/ {'defaults' if 'default' in profile else 'stock values'} for update_interval: {self._update_interval}, code: {self._code}, min_span: {self._min_span}, max_size: {self._max_size}, digits: {self._digits}, poll_interval: {self._poll_interval}, parameters: {parameters}")
 
         table = {r: get_request_code(pr) for pr in profile["requests"] for r in range(pr[REQUEST_START], pr[REQUEST_END] + 1)} if "requests" in profile and not "requests_fine_control" in profile else {}
 
@@ -76,6 +81,8 @@ class ParameterParser:
         return self.is_valid(parameters) and self.is_enabled(parameters) and parameters["rule"] > 0
 
     def is_scheduled(self, parameters, runtime):
+        if self._poll_interval:
+            return runtime % max(parameters.get(REQUEST_UPDATE_INTERVAL, self._update_interval), self._poll_interval) == 0
         return "realtime" in parameters or (runtime % (parameters[REQUEST_UPDATE_INTERVAL] if REQUEST_UPDATE_INTERVAL in parameters else self._update_interval) == 0)
 
     def default_from_unit_of_measurement(self, parameters):

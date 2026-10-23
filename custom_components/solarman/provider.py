@@ -134,5 +134,5 @@ class ProfileProvider:
 
     async def init(self, request: Callable[[int, dict], Awaitable[dict]] | None = None):
         if (f := await lookup_profile(request, self.parameters) if self.auto else self.filename) and f != DEFAULT_[CONF_LOOKUP_FILE] and (n := process_profile(f, self.parameters)):
-            self.parser = await ParameterParser().init(self.config.directory, n, self.parameters)
+            self.parser = await ParameterParser().init(self.config.directory, n, self.parameters, int(self._additional_options.get(CONF_POLL_INTERVAL, DEFAULT_[CONF_POLL_INTERVAL])))
         return self

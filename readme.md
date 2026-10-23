@@ -8,6 +8,9 @@
 >   is offline. `deye_micro.yaml` uses `offline_value: 0` for Power, PV Power and PV1-4 Power (0 W at night).
 > - Ported from Micka41/ha-solarman: device registry API for HA 2027.8, reconnect with backoff, asyncio.Event in
 >   pysolarman, non-blocking profile directory listing (#1071).
+> - New option *Additional options → Minimum poll interval* (seconds, `0` = profile default): registers are read
+>   no more often than this; slower profile intervals (e.g. hourly device info) are kept. Rounded up to a multiple
+>   of 5 s. Useful for micro-inverters that refresh their data only every few minutes.
 
 # ⚡ Solarman Stick Logger
 
