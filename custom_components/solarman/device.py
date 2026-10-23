@@ -94,7 +94,7 @@ class Device():
         except Exception as e:
             if self.state.update(exception = e) or runtime == 0:
                 await self.modbus.close()
-                if self.profile.parser:
+                if self.profile and self.profile.parser:
                     self.profile.parser.reset()
                 raise
             _LOGGER.debug(f"[{self.endpoint.host}] {"Timeout" if (x := isinstance(e, TimeoutError)) else "Error"} fetching {self.config.name} data{"" if x else f": {strepr(e)}"}")
