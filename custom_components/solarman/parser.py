@@ -120,7 +120,7 @@ class ParameterParser:
 
         return True
 
-    def do_validate(self, key, value, rule):
+    def do_validate(self, key, value, rule, definition = None):
         invalid = 0
         previous_value = None
 
@@ -129,7 +129,12 @@ class ParameterParser:
 
         if dev := rule.get("dev"):
             if value and (previous_value := self._previous_result.get(key)) is not None and abs(value - previous_value) > dev:
-                invalid |= 2
+                # A total_increasing counter dropping to near zero is a period rollover (e.g. monthly counter), not bad data: re-anchor the baseline
+                # Otherwise every following poll is compared against the stale pre-rollover value and fails forever (#1148)
+                if definition is not None and definition.get("state_class") == "total_increasing" and value < previous_value and value <= dev:
+                    self._previous_result[key] = value
+                else:
+                    invalid |= 2
             elif not invalid:
                 self._previous_result[key] = value
 
@@ -298,7 +303,7 @@ class ParameterParser:
             self.set_state(key, lookup_value(value, definition["lookup"]), int(value) if len(definition["registers"]) == 1 else list(split_p16b(value)))
             return
 
-        if (validation := definition.get("validation")) is not None and not self.do_validate(key, value, validation):
+        if (validation := definition.get("validation")) is not None and not self.do_validate(key, value, validation, definition):
             if (d := validation.get("default")) is None:
                 return
             value = d
@@ -317,7 +322,7 @@ class ParameterParser:
 
         key = definition["key"]
 
-        if (validation := definition.get("validation")) is not None and not self.do_validate(key, value, validation):
+        if (validation := definition.get("validation")) is not None and not self.do_validate(key, value, validation, definition):
             if (d := validation.get("default")) is None:
                 return
             value = d
