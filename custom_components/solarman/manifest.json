@@ -1,7 +1,7 @@
 {
   "domain": "solarman",
   "name": "Solarman",
-  "codeowners": ["@davidrapan"],
+  "codeowners": ["@StefanRiese"],
   "config_flow": true,
   "dependencies": ["network", "dhcp"],
   "dhcp": [{"macaddress": "E8FDF8*"}, {"registered_devices": true}],
