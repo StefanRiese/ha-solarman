@@ -4,6 +4,9 @@
 >   validation while a micro-inverter powers down at dusk) instead of switching to `unknown`.
 > - `deye_micro.yaml`: `Device` and `Today Production*` are `persistent`; Device State lookup 2/4 swapped for
 >   logger firmware MW3_SSL_5408_1.0B (upstream issue #342).
+> - New profile option `offline_value: <value>`: the sensor stays available and reports that value while the device
+>   is offline. `deye_micro.yaml` uses `offline_value: 0` for Power, PV Power and PV1-4 Power (0 W at night).
+> - Ported from Micka41/ha-solarman: device registry API for HA 2027.8, reconnect with backoff.
 
 # ⚡ Solarman Stick Logger
 

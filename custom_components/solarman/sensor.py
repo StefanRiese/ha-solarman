@@ -32,6 +32,9 @@ def _create_entity(coordinator, description, options):
             elif name == "Battery Capacity":
                 return SolarmanBatteryCapacitySensor(coordinator, description)
 
+    if "offline_value" in description:
+        return SolarmanOfflineValueSensor(coordinator, description)
+
     if "persistent" in description:
         return SolarmanPersistentSensor(coordinator, description)
 
@@ -115,6 +118,21 @@ class SolarmanPersistentSensor(SolarmanRestoreSensor):
     @property
     def available(self) -> bool:
         return True
+
+class SolarmanOfflineValueSensor(SolarmanSensor):
+    # Stays available and reports a fixed value (e.g. 0 W) while the device is offline - a micro-inverter at night
+    def __init__(self, coordinator, sensor):
+        super().__init__(coordinator, sensor)
+        self._offline_value = sensor["offline_value"]
+
+    @property
+    def available(self) -> bool:
+        return True
+
+    def update(self):
+        if super().available:
+            return super().update()
+        self.set_state(self._offline_value)
 
 class SolarmanBatterySensor(SolarmanSensor):
     def __init__(self, coordinator, sensor, battery_nominal_voltage, battery_life_cycle_rating):

@@ -1,6 +1,8 @@
 #
 # Deye | Microinverter | 4 MPPT
 #
+# Fork: power sensors report 0 W (offline_value) instead of unavailable while the inverter is off at night
+#
 # Reference: https://github.com/user-attachments/files/16597960/Deye.Modbus.protocol.V118.pdf
 #
 # Tested with SUN2000G3, SUN-800-G3-EU-230 FW: 2.06, SUN-M80-G3-EU-Q0 FW: 2.06, SUN-M80-G3-EU-230 FW: 2.32-D1, 2.33-E3, 5.0C-S, SUN-M80G3-EU-230 and SUN-M60G3-EU-Q0
@@ -267,6 +269,7 @@ parameters:
   - group: PV
     items:
       - name: PV Power
+        offline_value: 0
         alt: DC Power
         mppt: 1
         description: Combined power of all inputs
@@ -296,6 +299,7 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: PV1 Power
+        offline_value: 0
         alt: DC1 Power
         mppt: 1
         class: "power"
@@ -333,6 +337,7 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: PV2 Power
+        offline_value: 0
         alt: DC2 Power
         mppt: 2
         class: "power"
@@ -370,6 +375,7 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: PV3 Power
+        offline_value: 0
         alt: DC3 Power
         mppt: 3
         class: "power"
@@ -407,6 +413,7 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: PV4 Power
+        offline_value: 0
         alt: DC4 Power
         mppt: 4
         class: "power"
@@ -808,6 +815,7 @@ parameters:
         registers: [0x004F]
 
       - name: "Power"
+        offline_value: 0
         class: "power"
         state_class: "measurement"
         uom: "W"
