@@ -19,6 +19,7 @@ parameters:
     update_interval: 3600
     items:
       - name: "Device"
+        persistent:
         class: "enum"
         rule: 1
         registers: [0x0000]
@@ -186,12 +187,16 @@ parameters:
             value: "Standby"
           - key: 0x0001
             value: "Self-test"
+          # Corrected for logger firmware MW3_SSL_5408_1.0B (seen on a SUN600G3 and on this 800 W unit): reports 4 while
+          # producing and 2 while online but not producing (too little light), see
+          # https://github.com/davidrapan/ha-solarman/issues/342. Real faults show up in
+          # Device Fault / Device Alarm instead.
           - key: 0x0002
-            value: "Normal"
+            value: "Idle"
           - key: 0x0003
             value: "Alarm"
           - key: 0x0004
-            value: "Fault"
+            value: "Normal"
 
       - name: "Device Alarm"
         class: "enum"
@@ -439,6 +444,7 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: "Today Production"
+        persistent:
         friendly_name: Today's Production
         class: "energy"
         state_class: "total_increasing"
@@ -452,6 +458,7 @@ parameters:
           invalidate_all:
 
       - name: "Today Production 1"
+        persistent:
         friendly_name: Today's Production 1
         mppt: 2
         class: "energy"
@@ -466,6 +473,7 @@ parameters:
           invalidate_all:
 
       - name: "Today Production 2"
+        persistent:
         friendly_name: Today's Production 2
         mppt: 2
         class: "energy"
@@ -480,6 +488,7 @@ parameters:
           invalidate_all:
 
       - name: "Today Production 3"
+        persistent:
         friendly_name: Today's Production 3
         mppt: 3
         class: "energy"
@@ -494,6 +503,7 @@ parameters:
           invalidate_all:
 
       - name: "Today Production 4"
+        persistent:
         friendly_name: Today's Production 4
         mppt: 4
         class: "energy"

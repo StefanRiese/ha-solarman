@@ -1,3 +1,10 @@
+> **Fork note:** this is a privately maintained fork of [davidrapan/ha-solarman](https://github.com/davidrapan/ha-solarman)
+> (upstream idle since 2026-05). Changes on top of upstream `main`:
+> - Restore/persistent sensors keep their last value when a poll yields no value (e.g. a reading rejected by
+>   validation while a micro-inverter powers down at dusk) instead of switching to `unknown`.
+> - `deye_micro.yaml`: `Device` and `Today Production*` are `persistent`; Device State lookup 2/4 swapped for
+>   logger firmware MW3_SSL_5408_1.0B (upstream issue #342).
+
 # ⚡ Solarman Stick Logger
 
 [![License](https://img.shields.io/github/license/davidrapan/ha-solarman)](https://github.com/davidrapan/ha-solarman/blob/main/license)

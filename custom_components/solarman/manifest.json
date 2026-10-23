@@ -5,10 +5,10 @@
   "config_flow": true,
   "dependencies": ["network", "dhcp"],
   "dhcp": [{"macaddress": "E8FDF8*"}, {"registered_devices": true}],
-  "documentation": "https://github.com/davidrapan/ha-solarman",
+  "documentation": "https://github.com/StefanRiese/ha-solarman",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/davidrapan/ha-solarman/issues",
+  "issue_tracker": "https://github.com/StefanRiese/ha-solarman/issues",
   "quality_scale": "custom",
   "requirements": ["aiofiles"],
   "version": "0.0.0"

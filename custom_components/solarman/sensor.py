@@ -103,6 +103,10 @@ class SolarmanRestoreSensor(SolarmanSensor, RestoreSensor):
             self._attr_native_value = last_sensor_data.native_value
 
     def set_state(self, state, value = None) -> bool:
+        # Local patch: keep the last/restored value when a poll yields nothing (rejected by validation,
+        # e.g. the 0 kWh the Deye micro reports while powering down at dusk) instead of going "unknown".
+        if state is None or state == "":
+            return False
         if self._sensor_ensure_increasing and self._attr_native_value is not None and state is not None and self._attr_native_value > state > 0:
             return False
         return super().set_state(state, value)
