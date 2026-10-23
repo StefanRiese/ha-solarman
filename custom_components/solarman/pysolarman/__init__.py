@@ -7,7 +7,7 @@ import asyncio
 from functools import wraps
 from random import randrange
 from logging import getLogger
-from multiprocessing import Event
+from asyncio import Event
 
 from .umodbus.functions import FUNCTION_CODES
 from .umodbus.exceptions import error_code_to_exception_map

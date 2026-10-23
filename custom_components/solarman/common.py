@@ -80,8 +80,13 @@ def protected(value, error):
 def get_current_file_name(value):
     return result[-1] if len(result := value.rsplit('.', 1)) > 0 else ""
 
+def _listdir(path, prefix, extensions):
+    if not (p := Path(path)).is_dir():
+        return []
+    return sorted(prefix + f.name for f in p.iterdir() if f.name.endswith(extensions) and f.is_file())
+
 async def async_listdir(path, prefix = "", extensions = ("yaml", "yml")):
-    return sorted([prefix + f.name for f in await async_execute(lambda: p.glob('*')) if f.is_file() and f.name.endswith(extensions)]) if (p := Path(path)) and p.exists() else []
+    return await async_execute(lambda: _listdir(path, prefix, extensions))
 
 def getipaddress(address: str):
     try:
