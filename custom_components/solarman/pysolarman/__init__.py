@@ -38,6 +38,11 @@ PROTOCOL.PLACEHOLDER4 = bytes.fromhex("000000000000000000000000") # delivery|pow
 PROTOCOL.START = bytes.fromhex("A5")
 PROTOCOL.END = bytes.fromhex("15")
 
+# Delay between reconnection attempts, doubled on each failure. The cap bounds how long it takes to notice the device
+# is back (sunrise for a micro-inverter) without hammering the network all night (a constant 0.2 s meant 5 attempts/s).
+RECONNECT_DELAY_MIN = 0.2
+RECONNECT_DELAY_MAX = 15
+
 def log_call(prefix: str):
     def decorator(f):
         @wraps(f)
@@ -207,22 +212,42 @@ class Solarman:
                 _ = self._data_queue.get_nowait()
             self._data_queue.put_nowait(data)
             self._data_event.clear()
-        self._keeper = create_task(self._open_connection())
+        self._keeper = create_task(self._reconnect())
+
+    async def _reconnect(self) -> None:
+        # Runs as a detached task from _keeper_loop: nobody awaits it, so an escaping exception would end up as
+        # "Task exception was never retrieved" in the HA log.
+        try:
+            await self._open_connection()
+        except Exception as e:
+            _LOGGER.debug(f"[{self.host}] Reconnection abandoned: {e!r}")
 
     @throttle(0.2)
     async def _open_connection(self) -> None:
-        try:
-            self._reader, self._writer = await asyncio.wait_for(asyncio.open_connection(self.host, self.port), self.timeout)
-            self._keeper = create_task(self._keeper_loop())
-            if self._data_event.is_set():
-                _LOGGER.debug(f"[{self.host}] Successful reconnection! Data expected. Will retry the last request")
-                await self._write(self._last_frame)
-            else:
-                _LOGGER.debug(f"[{self.host}] Successful connection!")
-        except Exception as e:
-            if self._last_frame is None:
-                raise ConnectionError("Cannot open connection") from e
-            await self._open_connection()
+        delay = RECONNECT_DELAY_MIN
+        while True:
+            keeper = None
+            try:
+                self._reader, self._writer = await asyncio.wait_for(asyncio.open_connection(self.host, self.port), self.timeout)
+                self._keeper = keeper = create_task(self._keeper_loop())
+                if self._data_event.is_set():
+                    _LOGGER.debug(f"[{self.host}] Successful reconnection! Data expected. Will retry the last request")
+                    await self._write(self._last_frame)
+                else:
+                    _LOGGER.debug(f"[{self.host}] Successful connection!")
+                return
+            except Exception as e:
+                # First connection: fail right away, HA retries the setup itself (ConfigEntryNotReady).
+                if self._last_frame is None:
+                    raise ConnectionError("Cannot open connection") from e
+                # Reconnection: the device may be off for a while (a micro-inverter and its logger shut down at
+                # night), so retry without limit - in a loop, not by recursion: calling itself grew the stack by
+                # 3 frames per attempt and killed the task with RecursionError after ~100 s.
+                if keeper is not None:
+                    keeper.cancel()  # reading already started: don't run two loops in parallel
+                _LOGGER.debug(f"[{self.host}] {e!r} ❘ Retrying in {delay}s")
+                await asyncio.sleep(delay)
+                delay = min(delay * 2, RECONNECT_DELAY_MAX)
 
     async def _close(self) -> None:
         if self._writer:
