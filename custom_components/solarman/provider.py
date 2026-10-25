@@ -116,6 +116,7 @@ class ProfileProvider:
     config: ConfigurationProvider
     endpoint: EndPointProvider
     parser: ParameterParser | None = None
+    undetected: bool = False
 
     def __getattr__(self, attr: str):
         return getattr(self.config, attr)
@@ -133,6 +134,16 @@ class ProfileProvider:
         return self.parser.info
 
     async def init(self, request: Callable[[int, dict], Awaitable[dict]] | None = None):
-        if (f := await lookup_profile(request, self.parameters) if self.auto else self.filename) and f != DEFAULT_[CONF_LOOKUP_FILE] and (n := process_profile(f, self.parameters)):
+        f = self.filename
+        if self.auto:
+            try:
+                f = await lookup_profile(request, self.parameters)
+            except (TimeoutError, ConnectionError):
+                # Device offline (e.g. a micro-inverter at night): fall back to the selected profile, the coordinator reloads
+                # the entry to run the autodetection once the device answers
+                if not f or f == DEFAULT_[CONF_LOOKUP_FILE]:
+                    raise
+                self.undetected = True
+        if f and f != DEFAULT_[CONF_LOOKUP_FILE] and (n := process_profile(f, self.parameters)):
             self.parser = await ParameterParser().init(self.config.directory, n, self.parameters, int(self._additional_options.get(CONF_POLL_INTERVAL, DEFAULT_[CONF_POLL_INTERVAL])))
         return self

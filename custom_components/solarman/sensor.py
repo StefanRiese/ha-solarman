@@ -129,6 +129,10 @@ class SolarmanOfflineValueSensor(SolarmanSensor):
     def __init__(self, coordinator, sensor):
         super().__init__(coordinator, sensor)
         self._offline_value = sensor["offline_value"]
+        if (options := getattr(self, "_attr_options", None)) and self._offline_value not in options:
+            # An enum sensor (e.g. Device State "Offline") only accepts states from its options
+            self._attr_options = options + [self._offline_value]
+            self._attr_extra_state_attributes = self._attr_extra_state_attributes | { "options": self._attr_options }
 
     @property
     def available(self) -> bool:

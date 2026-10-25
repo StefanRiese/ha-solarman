@@ -281,6 +281,7 @@ def postprocess_descriptions(coordinator):
         return (l := description.get("enabled_lookup")) is not None and (k := list(l)[0]) is not None and (v := coordinator.data.get(k)) is not None and not get_tuple(v) in l[k]
 
     descriptions = coordinator.device.profile.parser.get_entity_descriptions()
+    deferred = []
 
     for description in descriptions:
         if not_enabled(description):
@@ -295,23 +296,36 @@ def postprocess_descriptions(coordinator):
                 if not_enabled(sensor):
                     sensors.remove(sensor)
 
-        if validation := description.get("validation"):
-            if (vlookup := validation.get("lookup")) and (max_value := coordinator.data.get(vlookup)) is not None and (value := abs(get_tuple(max_value))):
-                if "min" not in validation:
-                    validation["min"] = -value
-                if "max" not in validation:
-                    validation["max"] = value
-            if s := validation.get("scale"):
-                if "min" in validation:
-                    validation["min"] *= s
-                if "max" in validation:
-                    validation["max"] *= s
+        if (validation := description.get("validation")) and not postprocess_validation(coordinator, validation):
+            deferred.append(validation)
 
         # Temporary location of fix for latest HA changes regarding default precision behavior
         if description["platform"] == "sensor" and description.get('suggested_display_precision') is None and (description.get("class") or description.get("device_class")) in ("energy", "energy_storage") and (description.get("suggested_unit_of_measurement") or description.get("unit_of_measurement") or description.get("uom")) == "kWh":
             description["suggested_display_precision"] = 1
 
     _LOGGER.debug(f"postprocess_descriptions: {descriptions}")
+
+    return deferred
+
+def requires_data(descriptions):
+    # Entities whose name, key, existence or nested device is derived from read values can't be built without data
+    return any(any(k in d for k in ("name_lookup", "enabled_lookup", "via_device")) or any("enabled_lookup" in s for s in d.get("sensors") or []) for d in descriptions)
+
+def postprocess_validation(coordinator, validation):
+    # Returns False (nothing applied) while the lookup value isn't available because the device was offline at setup
+    if (vlookup := validation.get("lookup")) and (max_value := coordinator.data.get(vlookup)) is None and not coordinator.data:
+        return False
+    if vlookup and max_value is not None and (value := abs(get_tuple(max_value))):
+        if "min" not in validation:
+            validation["min"] = -value
+        if "max" not in validation:
+            validation["max"] = value
+    if s := validation.get("scale"):
+        if "min" in validation:
+            validation["min"] *= s
+        if "max" in validation:
+            validation["max"] *= s
+    return True
 
 def get_code(item, type, default = None):
     if REQUEST_CODE in item and (code := item[REQUEST_CODE]):

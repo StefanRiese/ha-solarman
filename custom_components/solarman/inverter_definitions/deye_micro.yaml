@@ -177,6 +177,7 @@ parameters:
           off: 0x0002
 
       - name: "Device State"
+        offline_value: "Offline"
         class: "enum"
         rule: 1
         registers: [0x003B]
