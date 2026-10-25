@@ -38,7 +38,8 @@
               "pack": "Número de módulos de batería",
               "battery_nominal_voltage": "Tensión nominal de la batería de iones de litio",
               "battery_life_cycle_rating": "Vida útil prevista de la batería de iones de litio (ciclos)",
-              "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)"
+              "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)",
+              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Número de módulos de batería",
               "battery_nominal_voltage": "Tensión nominal de la batería de iones de litio",
               "battery_life_cycle_rating": "Vida útil prevista de la batería de iones de litio (ciclos)",
-              "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)"
+              "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)",
+              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)"
             }
           }
         }
