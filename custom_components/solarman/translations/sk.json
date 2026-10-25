@@ -38,7 +38,8 @@
               "pack": "Počet batériových súprav",
               "battery_nominal_voltage": "Menovité napätie lítium-iónovej batérie",
               "battery_life_cycle_rating": "Predpokladaná životnosť lítium-iónovej batérie v cykloch",
-              "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)"
+              "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)",
+              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Počet batériových súprav",
               "battery_nominal_voltage": "Menovité napätie lítium-iónovej batérie",
               "battery_life_cycle_rating": "Predpokladaná životnosť lítium-iónovej batérie v cykloch",
-              "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)"
+              "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)",
+              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)"
             }
           }
         }
