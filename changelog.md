@@ -9,8 +9,6 @@ davidrapan#1186 refer to upstream issues and pull requests.
 
 ## [Unreleased]
 
-## [v26.10.28] - 2026-10-28
-
 ### Added
 - This changelog.
 
@@ -107,8 +105,7 @@ Ported from open upstream pull requests.
 ### Fixed
 - The real error is no longer masked when a poll fails during setup (before the profile is created).
 
-[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.28...HEAD
-[v26.10.28]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_2...v26.10.28
+[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_2...HEAD
 [v26.10.25_2]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_1...v26.10.25_2
 [v26.10.25_1]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25...v26.10.25_1
 [v26.10.25]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.23_7...v26.10.25
