@@ -25,6 +25,7 @@
           "name": "Prefix für alle Parameterwerte (nach Belieben zu ändern)",
           "host": "Der Hostname oder die IP-Adresse des Geräts, mit dem eine Verbindung hergestellt werden soll",
           "port": "Der Port (8899) des Geräts, mit dem eine Verbindung hergestellt werden soll",
+          "transport": "Transportprotokoll für die Kommunikation mit dem Gerät",
           "lookup_file": "YAML-Datei mit der Parameter-Definition"
         },
         "sections": {
@@ -64,6 +65,7 @@
         "data_description": {
           "host": "Der Hostname oder die IP-Adresse des Geräts, mit dem eine Verbindung hergestellt werden soll",
           "port": "Der Port (8899) des Geräts, mit dem eine Verbindung hergestellt werden soll",
+          "transport": "Transportprotokoll für die Kommunikation mit dem Gerät",
           "lookup_file": "YAML-Datei mit der Parameter-Definition"
         },
         "sections": {

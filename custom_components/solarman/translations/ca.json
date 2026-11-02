@@ -25,6 +25,7 @@
           "name": "Aquest nom s'utilitzarà com a prefixe de tots els dispositius",
           "host": "El nom de l'amfitrió o l'adreça IP del dispositiu, per a connectar-s'hi",
           "port": "El port (8899) del dispositiu, per a connectar-s'hi",
+          "transport": "Protocol de transport utilitzat en la comunicació amb el dispositiu",
           "lookup_file": "El fitxer yaml que conté les definicions dels paràmetres de l'inversor"
         },
         "sections": {
@@ -37,7 +38,8 @@
               "pack": "Nombre de paquets de bateries",
               "battery_nominal_voltage": "Voltatge nominal de la bateria de ió-liti",
               "battery_life_cycle_rating": "Estimació del cicle de vida esperat de la bateria d'ió-liti",
-              "mb_slave_id": "ID de l'esclau Modbus (normalment 1)"
+              "mb_slave_id": "ID de l'esclau Modbus (normalment 1)",
+              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)"
             }
           }
         }
@@ -63,6 +65,7 @@
         "data_description": {
           "host": "El nom de l'amfitrió o l'adreça IP del dispositiu, per a connectar-s'hi",
           "port": "El port (8899) del dispositiu, per a connectar-s'hi",
+          "transport": "Protocol de transport utilitzat en la comunicació amb el dispositiu",
           "lookup_file": "El fitxer yaml que conté les definicions dels paràmetres de l'inversor"
         },
         "sections": {
@@ -75,7 +78,8 @@
               "pack": "Nombre de paquets de bateries",
               "battery_nominal_voltage": "Voltatge nominal de la bateria de ió-liti",
               "battery_life_cycle_rating": "Estimació del cicle de vida esperat de la bateria d'ió-liti",
-              "mb_slave_id": "ID de l'esclau Modbus (normalment 1)"
+              "mb_slave_id": "ID de l'esclau Modbus (normalment 1)",
+              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)"
             }
           }
         }

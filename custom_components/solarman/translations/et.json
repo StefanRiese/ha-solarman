@@ -38,7 +38,8 @@
               "pack": "Akkupakkide arv",
               "battery_nominal_voltage": "Liitiumioonaku nimipinge",
               "battery_life_cycle_rating": "Liitiumioonaku eeldatav eluaja tsüklide arv",
-              "mb_slave_id": "Modbus Slave ID (tavaliselt 1)"
+              "mb_slave_id": "Modbus Slave ID (tavaliselt 1)",
+              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Akkupakkide arv",
               "battery_nominal_voltage": "Liitiumioonaku nimipinge",
               "battery_life_cycle_rating": "Liitiumioonaku eeldatav eluaja tsüklide arv",
-              "mb_slave_id": "Modbus Slave ID (tavaliselt 1)"
+              "mb_slave_id": "Modbus Slave ID (tavaliselt 1)",
+              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)"
             }
           }
         }

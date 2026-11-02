@@ -25,6 +25,7 @@
           "name": "Ta nazwa b\u0119dzie poprzedza\u0107 wszystkie warto\u015bci parametr\u00f3w (zmie\u0144 wedle uznania)",
           "host": "Nazwa hosta lub adres IP urządzenia, z którym chcesz się połączyć",
           "port": "Port (8899) urządzenia, z którym chcesz się połączyć",
+          "transport": "Protokół transportowy używany do komunikacji z urządzeniem",
           "lookup_file": "Plik yaml u\u017cywany do definiowania parametr\u00f3w"
         },
         "sections": {
@@ -37,7 +38,8 @@
               "pack": "Liczba pakietów baterii",
               "battery_nominal_voltage": "Napi\u0119cie znamionowe akumulatora litowo-jonowego",
               "battery_life_cycle_rating": "Oczekiwany wska\u017anik cyklu \u017cycia akumulatora litowo-jonowego",
-              "mb_slave_id": "Modbus Slave ID (zwykle 1)"
+              "mb_slave_id": "Modbus Slave ID (zwykle 1)",
+              "poll_interval": "Minimalny interwał odpytywania w sekundach (0 = domyślna wartość profilu)"
             }
           }
         }
@@ -63,6 +65,7 @@
         "data_description": {
           "host": "Nazwa hosta lub adres IP urządzenia, z którym chcesz się połączyć",
           "port": "Port (8899) urządzenia, z którym chcesz się połączyć",
+          "transport": "Protokół transportowy używany do komunikacji z urządzeniem",
           "lookup_file": "Plik yaml u\u017cywany do definiowania parametr\u00f3w"
         },
         "sections": {
@@ -75,7 +78,8 @@
               "pack": "Liczba pakietów baterii",
               "battery_nominal_voltage": "Napi\u0119cie znamionowe akumulatora litowo-jonowego",
               "battery_life_cycle_rating": "Oczekiwany wska\u017anik cyklu \u017cycia akumulatora litowo-jonowego",
-              "mb_slave_id": "Modbus Slave ID (zwykle 1)"
+              "mb_slave_id": "Modbus Slave ID (zwykle 1)",
+              "poll_interval": "Minimalny interwał odpytywania w sekundach (0 = domyślna wartość profilu)"
             }
           }
         }

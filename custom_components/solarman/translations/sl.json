@@ -38,7 +38,8 @@
               "pack": "Število baterijskih paketov",
               "battery_nominal_voltage": "Nazivna napetost litij-ionske baterije",
               "battery_life_cycle_rating": "Pričakovano število življenjskih ciklov litij-ionske baterije",
-              "mb_slave_id": "Modbus Slave ID (običajno 1)"
+              "mb_slave_id": "Modbus Slave ID (običajno 1)",
+              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Število baterijskih paketov",
               "battery_nominal_voltage": "Nazivna napetost litij-ionske baterije",
               "battery_life_cycle_rating": "Pričakovano število življenjskih ciklov litij-ionske baterije",
-              "mb_slave_id": "Modbus Slave ID (običajno 1)"
+              "mb_slave_id": "Modbus Slave ID (običajno 1)",
+              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)"
             }
           }
         }

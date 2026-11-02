@@ -12,6 +12,8 @@ davidrapan#1186 refer to upstream issues and pull requests.
 ### Added
 - This changelog.
 - `deye_hybrid`: Unipower (code 15) in Battery BMS Type (davidrapan#1210).
+- Translations ca, cs, et, fi, it, pl, pt-BR, sl, ua, zh-Hans: *Minimum poll interval* option;
+  ca, cs, de, it, pl, pt-BR, ua: transport protocol description.
 
 ### Fixed
 - `afore_2mppt`: PV2 Power reads register 0x0230 instead of PV1 Current; Today/Total Production

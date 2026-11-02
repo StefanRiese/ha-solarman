@@ -38,7 +38,8 @@
               "pack": "Akkupakettien määrä",
               "battery_nominal_voltage": "Akuston nimellisjännite",
               "battery_life_cycle_rating": "Akuston arvioitu elinkaari lataus-/purkaussykleinä",
-              "mb_slave_id": "Modbus Slave ID (yleensä 1)"
+              "mb_slave_id": "Modbus Slave ID (yleensä 1)",
+              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)"
             }
           }
         }
@@ -77,7 +78,8 @@
               "pack": "Akkupakettien määrä",
               "battery_nominal_voltage": "Akuston nimellisjännite",
               "battery_life_cycle_rating": "Akuston arvioitu elinkaari lataus-/purkaussykleinä",
-              "mb_slave_id": "Modbus Slave ID (yleensä 1)"
+              "mb_slave_id": "Modbus Slave ID (yleensä 1)",
+              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)"
             }
           }
         }

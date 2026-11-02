@@ -25,6 +25,7 @@
           "name": "Este nome será prefixado para todos os valores de parâmetro (altere como quiser)",
           "host": "O nome do host ou endereço IP do dispositivo ao qual se conectar",
           "port": "A porta (8899) do dispositivo ao qual se conectar",
+          "transport": "Protocolo de transporte usado na comunicação com o dispositivo",
           "lookup_file": "O arquivo yaml a ser usado para definição de parâmetro"
         },
         "sections": {
@@ -37,7 +38,8 @@
               "pack": "Número de baterias",
               "battery_nominal_voltage": "Tensão nominal da bateria de íons de lítio",
               "battery_life_cycle_rating": "Classificação do ciclo de vida esperado da bateria de íons de lítio",
-              "mb_slave_id": "Modbus Slave ID (geralmente 1)"
+              "mb_slave_id": "Modbus Slave ID (geralmente 1)",
+              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)"
             }
           }
         }
@@ -63,6 +65,7 @@
         "data_description": {
           "host": "O nome do host ou endereço IP do dispositivo ao qual se conectar",
           "port": "A porta (8899) do dispositivo ao qual se conectar",
+          "transport": "Protocolo de transporte usado na comunicação com o dispositivo",
           "lookup_file": "O arquivo yaml a ser usado para definição de parâmetro"
         },
         "sections": {
@@ -75,7 +78,8 @@
               "pack": "Número de baterias",
               "battery_nominal_voltage": "Tensão nominal da bateria de íons de lítio",
               "battery_life_cycle_rating": "Classificação do ciclo de vida esperado da bateria de íons de lítio",
-              "mb_slave_id": "Modbus Slave ID (geralmente 1)"
+              "mb_slave_id": "Modbus Slave ID (geralmente 1)",
+              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)"
             }
           }
         }

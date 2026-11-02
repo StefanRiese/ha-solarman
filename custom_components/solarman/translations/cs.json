@@ -25,6 +25,7 @@
           "name": "Tento název bude mít předponu u všech senzorů (změňte, jak chcete)",
           "host": "Název hostitele nebo IP adresa zařízení, ke kterému se chcete připojit",
           "port": "Port (8899) zařízení, ke kterému se chcete připojit",
+          "transport": "Transportní protokol používaný při komunikaci se zařízením",
           "lookup_file": "Soubor yaml obsahující definice parametrů měniče"
         },
         "sections": {
@@ -37,7 +38,8 @@
               "pack": "Počet bateriových sad",
               "battery_nominal_voltage": "Jmenovité napětí lithium-iontové baterie",
               "battery_life_cycle_rating": "Předpokládaná životnost lithium-iontové baterie",
-              "mb_slave_id": "Modbus Slave ID (obvykle 1)"
+              "mb_slave_id": "Modbus Slave ID (obvykle 1)",
+              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)"
             }
           }
         }
@@ -63,6 +65,7 @@
         "data_description": {
           "host": "Název hostitele nebo IP adresa zařízení, ke kterému se chcete připojit",
           "port": "Port (8899) zařízení, ke kterému se chcete připojit",
+          "transport": "Transportní protokol používaný při komunikaci se zařízením",
           "lookup_file": "Soubor yaml obsahující definice parametrů měniče"
         },
         "sections": {
@@ -75,7 +78,8 @@
               "pack": "Počet bateriových sad",
               "battery_nominal_voltage": "Jmenovité napětí lithium-iontové baterie",
               "battery_life_cycle_rating": "Předpokládaná životnost lithium-iontové baterie",
-              "mb_slave_id": "Modbus Slave ID (obvykle 1)"
+              "mb_slave_id": "Modbus Slave ID (obvykle 1)",
+              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)"
             }
           }
         }

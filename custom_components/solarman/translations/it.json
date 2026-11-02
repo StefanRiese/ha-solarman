@@ -25,6 +25,7 @@
           "name": "Questo valore sarà il prefisso di tutte le entità (scegli il nome che più ritieni adatto)",
           "host": "Il nome host o l'indirizzo IP del dispositivo a cui connettersi",
           "port": "La porta (8899) del dispositivo a cui connettersi",
+          "transport": "Protocollo di trasporto utilizzato per la comunicazione con il dispositivo",
           "lookup_file": "File YAML contenente la definizione Inverter"
         },
         "sections": {
@@ -37,7 +38,8 @@
               "pack": "Numero di pacchi batteria",
               "battery_nominal_voltage": "Voltaggio nominale della batteria agli ioni di litio",
               "battery_life_cycle_rating": "Ciclo di vita previsto della batteria agli ioni di litio",
-              "mb_slave_id": "Slave ID di Modbus (solitamente 1)"
+              "mb_slave_id": "Slave ID di Modbus (solitamente 1)",
+              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)"
             }
           }
         }
@@ -63,6 +65,7 @@
         "data_description": {
           "host": "Il nome host o l'indirizzo IP del dispositivo a cui connettersi",
           "port": "La porta (8899) del dispositivo a cui connettersi",
+          "transport": "Protocollo di trasporto utilizzato per la comunicazione con il dispositivo",
           "lookup_file": "File YAML contenente la definizione Inverter"
         },
         "sections": {
@@ -75,7 +78,8 @@
               "pack": "Numero di pacchi batteria",
               "battery_nominal_voltage": "Voltaggio nominale della batteria agli ioni di litio",
               "battery_life_cycle_rating": "Ciclo di vita previsto della batteria agli ioni di litio",
-              "mb_slave_id": "Slave ID di Modbus (solitamente 1)"
+              "mb_slave_id": "Slave ID di Modbus (solitamente 1)",
+              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)"
             }
           }
         }
