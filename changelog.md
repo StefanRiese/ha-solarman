@@ -9,19 +9,23 @@ davidrapan#1186 refer to upstream issues and pull requests.
 
 ## [Unreleased]
 
+## [v26.11.02] - 2026-11-02
+
+Ported from open upstream pull requests, plus translation fixes.
+
 ### Added
 - This changelog.
 - `deye_hybrid`: Unipower (code 15) in Battery BMS Type (davidrapan#1210).
 - Translations ca, cs, et, fi, it, pl, pt-BR, sl, ua, zh-Hans: *Minimum poll interval* option;
   ca, cs, de, it, pl, pt-BR, ua: transport protocol description.
-- Translation fi: *Today's Generation* used the wrong key (`generator_energy_today`) and was
-  translated as generator output.
 
 ### Fixed
 - `afore_2mppt`: PV2 Power reads register 0x0230 instead of PV1 Current; Today/Total Production
   unit is kWh instead of Wh (davidrapan#1136, davidrapan#1087).
 - `hinen_hybrid`: Energy Pattern and Battery Type (formerly Battery Control Mode) are read-only
   sensors instead of selects that wrote to unrelated holding registers (davidrapan#1086).
+- Translation fi: *Today's Generation* used the wrong key (`generator_energy_today`) and was
+  translated as generator output.
 
 ## [v26.10.25_2] - 2026-10-25
 
@@ -116,7 +120,8 @@ Ported from open upstream pull requests.
 ### Fixed
 - The real error is no longer masked when a poll fails during setup (before the profile is created).
 
-[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_2...HEAD
+[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.11.02...HEAD
+[v26.11.02]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_2...v26.11.02
 [v26.10.25_2]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_1...v26.10.25_2
 [v26.10.25_1]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25...v26.10.25_1
 [v26.10.25]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.23_7...v26.10.25
