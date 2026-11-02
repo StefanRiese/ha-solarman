@@ -11,6 +11,13 @@ davidrapan#1186 refer to upstream issues and pull requests.
 
 ### Added
 - This changelog.
+- `deye_hybrid`: Unipower (code 15) in Battery BMS Type (davidrapan#1210).
+
+### Fixed
+- `afore_2mppt`: PV2 Power reads register 0x0230 instead of PV1 Current; Today/Total Production
+  unit is kWh instead of Wh (davidrapan#1136, davidrapan#1087).
+- `hinen_hybrid`: Energy Pattern and Battery Type (formerly Battery Control Mode) are read-only
+  sensors instead of selects that wrote to unrelated holding registers (davidrapan#1086).
 
 ## [v26.10.25_2] - 2026-10-25
 
