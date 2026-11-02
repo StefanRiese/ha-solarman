@@ -113,8 +113,8 @@
       "today_energy_import": {
         "name": "Energian osto tänään"
       },
-      "generator_energy_today": {
-        "name": "Generaattorin tuotanto tänään"
+      "today_generation": {
+        "name": "Tuotanto tänään"
       },
       "today_load_consumption": {
         "name": "Kuorman energiankulutus tänään"
