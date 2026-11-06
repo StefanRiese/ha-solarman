@@ -62,8 +62,7 @@ class SolarmanNumberEntity(SolarmanWritableEntity, NumberEntity):
 
     async def async_set_native_value(self, value: float) -> None:
         """Update the setting."""
-        # round before truncating: float division can land just below the register step, e.g. 160.1 / 0.1 = 1600.9999999999998
-        value_int = int(value if self.scale is None else round(value / self.scale, 6))
+        value_int = round(value if self.scale is None else value / self.scale)
         if self.offset is not None:
             value_int += self.offset
         await self.write(value_int if value_int < 0xFFFF else 0xFFFF, get_number(value))
