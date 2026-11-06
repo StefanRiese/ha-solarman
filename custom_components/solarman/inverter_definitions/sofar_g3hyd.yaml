@@ -290,7 +290,7 @@ parameters:
         validation:
           min: 0
           max: 25000
-          invalidate_all:           
+          invalidate_all:
         registers: [0x0586]
         icon: "mdi:solar-power-variant"
 
@@ -324,7 +324,7 @@ parameters:
         validation:
           min: 0
           max: 25000
-          invalidate_all:           
+          invalidate_all:
         registers: [0x0589]
         icon: "mdi:solar-power-variant"
 
@@ -358,7 +358,7 @@ parameters:
         validation:
           min: 0
           max: 25000
-          invalidate_all:           
+          invalidate_all:
         registers: [0x058c]
         icon: "mdi:solar-power-variant"
 
@@ -392,7 +392,7 @@ parameters:
         validation:
           min: 0
           max: 25000
-          invalidate_all:           
+          invalidate_all:
         registers: [0x058f]
         icon: "mdi:solar-power-variant"
 
@@ -440,7 +440,7 @@ parameters:
         validation:
           min: -50000
           max: 50000
-          invalidate_all:        
+          invalidate_all:
         registers: [0x0606]
 
       - name: "Battery Temperature"
@@ -457,7 +457,7 @@ parameters:
         rule: 1
         validation:
           min: 0
-          max: 101           
+          max: 101
         registers: [0x0608]
 
       - name: "Battery SOH"
@@ -818,7 +818,7 @@ parameters:
         validation:
           min: 0
           max: 50000
-          invalidate_all:          
+          invalidate_all:
         registers: [0x04AF]
 
   - group: GridEPS
@@ -1079,7 +1079,7 @@ parameters:
         validation:
           min: 0
           dev: 10000
-          invalidate_all: 2        
+          invalidate_all: 2
         registers: [0x068D, 0x068C]
         icon: "mdi:transmission-tower-export"
 
@@ -1090,8 +1090,6 @@ parameters:
         uom: "kWh"
         scale: 0.1
         rule: 3
-        validation:
-          min: 0.1        
         registers: [0x068F, 0x068E]
         icon: "mdi:transmission-tower-export"
         validation:
@@ -1108,7 +1106,7 @@ parameters:
         validation:
           min: 0
           dev: 10000
-          invalidate_all: 2        
+          invalidate_all: 2
         registers: [0x0691, 0x0690]
         icon: "mdi:transmission-tower-import"
 
@@ -1159,7 +1157,7 @@ parameters:
         validation:
           min: 0
           dev: 10000
-          invalidate_all: 2                  
+          invalidate_all: 2
 
       - name: "Total Battery Discharge"
         class: "energy"
@@ -1172,7 +1170,7 @@ parameters:
         validation:
           min: 0.1
           dev: 10000
-          invalidate_all: 2          
+          invalidate_all: 2
 
       - name: Today Losses
         alt: Daily Losses
