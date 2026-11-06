@@ -9,6 +9,21 @@ davidrapan#1186 refer to upstream issues and pull requests.
 
 ## [Unreleased]
 
+Ported from open upstream pull requests.
+
+### Added
+- Option *Additional options → Data logger serial number* (`0` = auto-detect) for loggers that UDP discovery
+  cannot reach, e.g. on another subnet; redacted in diagnostics (davidrapan#1120). Translated into all languages.
+- `deye_hybrid`: Load UPS Power sensor (`0x00B3`) (davidrapan#1214).
+- `deye_p3`: UPS Delay select (`0x00D1`: 0 ms / Normal / 100 ms) (davidrapan#1178).
+- `sofar_g3`: Active Power Limitation switch and Active Power Limit number (`0x1105`/`0x1106`), written
+  together; these registers are volatile (davidrapan#1207).
+- `solis_3p-4g`: Grid Power and Consumption Power from the export limiter meter (davidrapan#1170).
+
+### Fixed
+- `sofar_g3hyd`: validation limits on PV, battery, grid and energy counters reject spikes such as 16 GWh
+  imported in one hour (davidrapan#1112).
+
 ## [v26.11.02] - 2026-11-02
 
 Ported from open upstream pull requests, plus translation fixes.
