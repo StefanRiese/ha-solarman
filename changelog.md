@@ -9,7 +9,9 @@ davidrapan#1186 refer to upstream issues and pull requests.
 
 ## [Unreleased]
 
-Ported from open upstream pull requests.
+## [v26.11.06] - 2026-11-06
+
+Ported from open upstream pull requests; merged upstream `main` (`ac33d9a`).
 
 ### Added
 - Option *Additional options → Data logger serial number* (`0` = auto-detect) for loggers that UDP discovery
@@ -23,6 +25,9 @@ Ported from open upstream pull requests.
 ### Fixed
 - `sofar_g3hyd`: validation limits on PV, battery, grid and energy counters reject spikes such as 16 GWh
   imported in one hour (davidrapan#1112).
+
+### Changed
+- Number entities use upstream's rounding of scaled values (davidrapan#1206) instead of the fork's equivalent fix.
 
 ## [v26.11.02] - 2026-11-02
 
@@ -135,7 +140,8 @@ Ported from open upstream pull requests.
 ### Fixed
 - The real error is no longer masked when a poll fails during setup (before the profile is created).
 
-[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.11.02...HEAD
+[Unreleased]: https://github.com/StefanRiese/ha-solarman/compare/v26.11.06...HEAD
+[v26.11.06]: https://github.com/StefanRiese/ha-solarman/compare/v26.11.02...v26.11.06
 [v26.11.02]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_2...v26.11.02
 [v26.10.25_2]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25_1...v26.10.25_2
 [v26.10.25_1]: https://github.com/StefanRiese/ha-solarman/compare/v26.10.25...v26.10.25_1
