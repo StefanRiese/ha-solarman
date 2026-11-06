@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Jmenovité napětí lithium-iontové baterie",
               "battery_life_cycle_rating": "Předpokládaná životnost lithium-iontové baterie",
               "mb_slave_id": "Modbus Slave ID (obvykle 1)",
-              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)"
+              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)",
+              "serial": "Sériové číslo dataloggeru"
+            },
+            "data_description": {
+              "serial": "Potřeba jen tehdy, když sériové číslo nelze zjistit automaticky (např. Home Assistant je v jiné podsíti než datalogger, takže ho UDP vyhledávání na portu 48899 nezastihne). Ponechte 0 pro automatickou detekci."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Jmenovité napětí lithium-iontové baterie",
               "battery_life_cycle_rating": "Předpokládaná životnost lithium-iontové baterie",
               "mb_slave_id": "Modbus Slave ID (obvykle 1)",
-              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)"
+              "poll_interval": "Minimální interval dotazování v sekundách (0 = výchozí hodnota profilu)",
+              "serial": "Sériové číslo dataloggeru"
+            },
+            "data_description": {
+              "serial": "Potřeba jen tehdy, když sériové číslo nelze zjistit automaticky (např. Home Assistant je v jiné podsíti než datalogger, takže ho UDP vyhledávání na portu 48899 nezastihne). Ponechte 0 pro automatickou detekci."
             }
           }
         }

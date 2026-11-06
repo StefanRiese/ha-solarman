@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Nennspannung des Lithium-Ionen-Akkus",
               "battery_life_cycle_rating": "Erwartete Lebensdauer der Lithium-Ionen-Batterie",
               "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)",
-              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)"
+              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)",
+              "serial": "Seriennummer des Datenloggers"
+            },
+            "data_description": {
+              "serial": "Nur nötig, wenn die Seriennummer nicht automatisch erkannt wird (z. B. wenn Home Assistant in einem anderen Subnetz als der Logger liegt und die UDP-Erkennung auf Port 48899 ihn nicht erreicht). 0 = automatische Erkennung."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Nennspannung des Lithium-Ionen-Akkus",
               "battery_life_cycle_rating": "Erwartete Lebensdauer der Lithium-Ionen-Batterie",
               "mb_slave_id": "Modbus-Slave-ID (normalerweise 1)",
-              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)"
+              "poll_interval": "Minimales Abfrageintervall in Sekunden (0 = Profilvorgabe)",
+              "serial": "Seriennummer des Datenloggers"
+            },
+            "data_description": {
+              "serial": "Nur nötig, wenn die Seriennummer nicht automatisch erkannt wird (z. B. wenn Home Assistant in einem anderen Subnetz als der Logger liegt und die UDP-Erkennung auf Port 48899 ihn nicht erreicht). 0 = automatische Erkennung."
             }
           }
         }

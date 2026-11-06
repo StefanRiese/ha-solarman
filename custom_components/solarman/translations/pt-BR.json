@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Tensão nominal da bateria de íons de lítio",
               "battery_life_cycle_rating": "Classificação do ciclo de vida esperado da bateria de íons de lítio",
               "mb_slave_id": "Modbus Slave ID (geralmente 1)",
-              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)"
+              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)",
+              "serial": "Número de série do data logger"
+            },
+            "data_description": {
+              "serial": "Necessário apenas quando o número de série não pode ser detectado automaticamente (por exemplo, o Home Assistant está em uma sub-rede diferente do logger e a descoberta UDP na porta 48899 não o alcança). Deixe 0 para detecção automática."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Tensão nominal da bateria de íons de lítio",
               "battery_life_cycle_rating": "Classificação do ciclo de vida esperado da bateria de íons de lítio",
               "mb_slave_id": "Modbus Slave ID (geralmente 1)",
-              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)"
+              "poll_interval": "Intervalo mínimo de consulta em segundos (0 = padrão do perfil)",
+              "serial": "Número de série do data logger"
+            },
+            "data_description": {
+              "serial": "Necessário apenas quando o número de série não pode ser detectado automaticamente (por exemplo, o Home Assistant está em uma sub-rede diferente do logger e a descoberta UDP na porta 48899 não o alcança). Deixe 0 para detecção automática."
             }
           }
         }

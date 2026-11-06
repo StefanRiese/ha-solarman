@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Liitiumioonaku nimipinge",
               "battery_life_cycle_rating": "Liitiumioonaku eeldatav eluaja tsüklide arv",
               "mb_slave_id": "Modbus Slave ID (tavaliselt 1)",
-              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)"
+              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)",
+              "serial": "Andmelogeri seerianumber"
+            },
+            "data_description": {
+              "serial": "Vajalik ainult siis, kui seerianumbrit ei õnnestu automaatselt tuvastada (nt Home Assistant on logerist erinevas alamvõrgus ja UDP-tuvastus pordil 48899 ei jõua selleni). Automaatseks tuvastamiseks jätke 0."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Liitiumioonaku nimipinge",
               "battery_life_cycle_rating": "Liitiumioonaku eeldatav eluaja tsüklide arv",
               "mb_slave_id": "Modbus Slave ID (tavaliselt 1)",
-              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)"
+              "poll_interval": "Minimaalne päringuintervall sekundites (0 = profiili vaikeväärtus)",
+              "serial": "Andmelogeri seerianumber"
+            },
+            "data_description": {
+              "serial": "Vajalik ainult siis, kui seerianumbrit ei õnnestu automaatselt tuvastada (nt Home Assistant on logerist erinevas alamvõrgus ja UDP-tuvastus pordil 48899 ei jõua selleni). Automaatseks tuvastamiseks jätke 0."
             }
           }
         }

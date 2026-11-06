@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "锂离子电池标称电压",
               "battery_life_cycle_rating": "锂离子电池预期寿命循环次数",
               "mb_slave_id": "Modbus 从站 ID（通常为 1）",
-              "poll_interval": "最小轮询间隔（秒，0 = 使用配置文件默认值）"
+              "poll_interval": "最小轮询间隔（秒，0 = 使用配置文件默认值）",
+              "serial": "数据采集器序列号"
+            },
+            "data_description": {
+              "serial": "仅在无法自动识别序列号时需要（例如 Home Assistant 与采集器不在同一子网，端口 48899 上的 UDP 发现无法到达）。保持为 0 即自动识别。"
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "锂离子电池标称电压",
               "battery_life_cycle_rating": "锂离子电池预期寿命循环次数",
               "mb_slave_id": "Modbus 从站 ID（通常为 1）",
-              "poll_interval": "最小轮询间隔（秒，0 = 使用配置文件默认值）"
+              "poll_interval": "最小轮询间隔（秒，0 = 使用配置文件默认值）",
+              "serial": "数据采集器序列号"
+            },
+            "data_description": {
+              "serial": "仅在无法自动识别序列号时需要（例如 Home Assistant 与采集器不在同一子网，端口 48899 上的 UDP 发现无法到达）。保持为 0 即自动识别。"
             }
           }
         }

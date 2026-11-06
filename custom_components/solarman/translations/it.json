@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Voltaggio nominale della batteria agli ioni di litio",
               "battery_life_cycle_rating": "Ciclo di vita previsto della batteria agli ioni di litio",
               "mb_slave_id": "Slave ID di Modbus (solitamente 1)",
-              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)"
+              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)",
+              "serial": "Numero di serie del data logger"
+            },
+            "data_description": {
+              "serial": "Necessario solo se il numero di serie non può essere rilevato automaticamente (ad es. Home Assistant si trova in una sottorete diversa dal logger e il rilevamento UDP sulla porta 48899 non lo raggiunge). Lasciare 0 per il rilevamento automatico."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Voltaggio nominale della batteria agli ioni di litio",
               "battery_life_cycle_rating": "Ciclo di vita previsto della batteria agli ioni di litio",
               "mb_slave_id": "Slave ID di Modbus (solitamente 1)",
-              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)"
+              "poll_interval": "Intervallo minimo di interrogazione in secondi (0 = valore predefinito del profilo)",
+              "serial": "Numero di serie del data logger"
+            },
+            "data_description": {
+              "serial": "Necessario solo se il numero di serie non può essere rilevato automaticamente (ad es. Home Assistant si trova in una sottorete diversa dal logger e il rilevamento UDP sulla porta 48899 non lo raggiunge). Lasciare 0 per il rilevamento automatico."
             }
           }
         }

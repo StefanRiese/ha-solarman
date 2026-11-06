@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Voltatge nominal de la bateria de ió-liti",
               "battery_life_cycle_rating": "Estimació del cicle de vida esperat de la bateria d'ió-liti",
               "mb_slave_id": "ID de l'esclau Modbus (normalment 1)",
-              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)"
+              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)",
+              "serial": "Número de sèrie del registrador de dades"
+            },
+            "data_description": {
+              "serial": "Només cal si el número de sèrie no es pot detectar automàticament (p. ex. Home Assistant és en una altra subxarxa que el registrador i el descobriment UDP al port 48899 no hi arriba). Deixeu-lo a 0 per a la detecció automàtica."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Voltatge nominal de la bateria de ió-liti",
               "battery_life_cycle_rating": "Estimació del cicle de vida esperat de la bateria d'ió-liti",
               "mb_slave_id": "ID de l'esclau Modbus (normalment 1)",
-              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)"
+              "poll_interval": "Interval mínim de consulta en segons (0 = valor del perfil)",
+              "serial": "Número de sèrie del registrador de dades"
+            },
+            "data_description": {
+              "serial": "Només cal si el número de sèrie no es pot detectar automàticament (p. ex. Home Assistant és en una altra subxarxa que el registrador i el descobriment UDP al port 48899 no hi arriba). Deixeu-lo a 0 per a la detecció automàtica."
             }
           }
         }

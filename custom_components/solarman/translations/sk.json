@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Menovité napätie lítium-iónovej batérie",
               "battery_life_cycle_rating": "Predpokladaná životnosť lítium-iónovej batérie v cykloch",
               "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)",
-              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)"
+              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)",
+              "serial": "Sériové číslo dataloggera"
+            },
+            "data_description": {
+              "serial": "Potrebné len vtedy, ak sériové číslo nemožno zistiť automaticky (napr. Home Assistant je v inej podsieti ako datalogger, takže ho UDP vyhľadávanie na porte 48899 nezastihne). Ponechajte 0 pre automatickú detekciu."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Menovité napätie lítium-iónovej batérie",
               "battery_life_cycle_rating": "Predpokladaná životnosť lítium-iónovej batérie v cykloch",
               "mb_slave_id": "ID podriadeného zariadenia Modbus (zvyčajne 1)",
-              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)"
+              "poll_interval": "Minimálny interval dotazovania v sekundách (0 = predvolené podľa profilu)",
+              "serial": "Sériové číslo dataloggera"
+            },
+            "data_description": {
+              "serial": "Potrebné len vtedy, ak sériové číslo nemožno zistiť automaticky (napr. Home Assistant je v inej podsieti ako datalogger, takže ho UDP vyhľadávanie na porte 48899 nezastihne). Ponechajte 0 pre automatickú detekciu."
             }
           }
         }

@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Tensión nominal de la batería de iones de litio",
               "battery_life_cycle_rating": "Vida útil prevista de la batería de iones de litio (ciclos)",
               "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)",
-              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)"
+              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)",
+              "serial": "Número de serie del registrador de datos"
+            },
+            "data_description": {
+              "serial": "Solo es necesario si el número de serie no se puede detectar automáticamente (p. ej. Home Assistant está en otra subred que el registrador y el descubrimiento UDP en el puerto 48899 no lo alcanza). Déjelo en 0 para la detección automática."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Tensión nominal de la batería de iones de litio",
               "battery_life_cycle_rating": "Vida útil prevista de la batería de iones de litio (ciclos)",
               "mb_slave_id": "ID del dispositivo esclavo Modbus (normalmente 1)",
-              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)"
+              "poll_interval": "Intervalo mínimo de consulta en segundos (0 = valor del perfil)",
+              "serial": "Número de serie del registrador de datos"
+            },
+            "data_description": {
+              "serial": "Solo es necesario si el número de serie no se puede detectar automáticamente (p. ej. Home Assistant está en otra subred que el registrador y el descubrimiento UDP en el puerto 48899 no lo alcanza). Déjelo en 0 para la detección automática."
             }
           }
         }

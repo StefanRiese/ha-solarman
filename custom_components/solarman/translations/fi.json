@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Akuston nimellisjännite",
               "battery_life_cycle_rating": "Akuston arvioitu elinkaari lataus-/purkaussykleinä",
               "mb_slave_id": "Modbus Slave ID (yleensä 1)",
-              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)"
+              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)",
+              "serial": "Dataloggerin sarjanumero"
+            },
+            "data_description": {
+              "serial": "Tarvitaan vain, jos sarjanumeroa ei voida tunnistaa automaattisesti (esim. Home Assistant on eri aliverkossa kuin loggeri, jolloin UDP-haku portissa 48899 ei tavoita sitä). Jätä arvoksi 0 automaattista tunnistusta varten."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Akuston nimellisjännite",
               "battery_life_cycle_rating": "Akuston arvioitu elinkaari lataus-/purkaussykleinä",
               "mb_slave_id": "Modbus Slave ID (yleensä 1)",
-              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)"
+              "poll_interval": "Pienin kyselyväli sekunteina (0 = profiilin oletus)",
+              "serial": "Dataloggerin sarjanumero"
+            },
+            "data_description": {
+              "serial": "Tarvitaan vain, jos sarjanumeroa ei voida tunnistaa automaattisesti (esim. Home Assistant on eri aliverkossa kuin loggeri, jolloin UDP-haku portissa 48899 ei tavoita sitä). Jätä arvoksi 0 automaattista tunnistusta varten."
             }
           }
         }

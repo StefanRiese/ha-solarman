@@ -39,7 +39,11 @@
               "battery_nominal_voltage": "Nazivna napetost litij-ionske baterije",
               "battery_life_cycle_rating": "Pričakovano število življenjskih ciklov litij-ionske baterije",
               "mb_slave_id": "Modbus Slave ID (običajno 1)",
-              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)"
+              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)",
+              "serial": "Serijska številka zapisovalnika podatkov"
+            },
+            "data_description": {
+              "serial": "Potrebna le, če serijske številke ni mogoče samodejno zaznati (npr. Home Assistant je v drugem podomrežju kot zapisovalnik, zato ga UDP-iskanje na vratih 48899 ne doseže). Pustite 0 za samodejno zaznavanje."
             }
           }
         }
@@ -79,7 +83,11 @@
               "battery_nominal_voltage": "Nazivna napetost litij-ionske baterije",
               "battery_life_cycle_rating": "Pričakovano število življenjskih ciklov litij-ionske baterije",
               "mb_slave_id": "Modbus Slave ID (običajno 1)",
-              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)"
+              "poll_interval": "Najkrajši interval poizvedovanja v sekundah (0 = privzeta vrednost profila)",
+              "serial": "Serijska številka zapisovalnika podatkov"
+            },
+            "data_description": {
+              "serial": "Potrebna le, če serijske številke ni mogoče samodejno zaznati (npr. Home Assistant je v drugem podomrežju kot zapisovalnik, zato ga UDP-iskanje na vratih 48899 ne doseže). Pustite 0 za samodejno zaznavanje."
             }
           }
         }
